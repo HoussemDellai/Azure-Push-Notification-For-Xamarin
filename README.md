@@ -31,7 +31,7 @@ PM> Install-Package Xam.Plugin.AzurePushNotification</br>
   PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";
   new AzurePushNotificationForXamarinFormsImplementation().RegisterForAzurePushNotification(this);//this will pass an instance of the MainActivity required to register for GCM.
   
-  b - For Windows Store and Windows Phone 8.1 RT
+  <h4>b - For Windows Store and Windows Phone 8.1 RT</h4>
   - Register your app for the Windows Store:
   https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#register-your-app-for-the-windows-store
   - configure your Notification Hub for Windows:
@@ -43,7 +43,7 @@ PM> Install-Package Xam.Plugin.AzurePushNotification</br>
   PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";
   new AzurePushNotificationForXamarinFormsImplementation().RegisterForAzurePushNotification(null);
 
- b - For Windows Phone 8/8.1 Silverlight
+ <h4>c - For Windows Phone 8/8.1 Silverlight</h4>
   - configure your Notification Hub for Windows Phone Silverlight:
   https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-windows-phone-get-started/#create-your-notification-hub
   - WMAppManifest.xml file, click the Capabilities tab, and make sure that the ID_CAP_PUSH_NOTIFICATION capability is checked.
