@@ -37,7 +37,7 @@ PM> Install-Package Xam.Plugin.AzurePushNotification</br>
   - configure your Notification Hub for Windows:
   https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-your-notification-hub
   - In the package.appxmanifest, make sue that 'Toast capable' is set to 'Yes'.
-  - Add the following code inside your app.cs, OnLaunched() method:
+  - Add the following code inside your app.cs, OnLaunched() method:</br>
   PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };</br>
   PushNotificationCredentials.AzureNotificationHubName = "AzureNotificationHubName";</br>
   PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";</br>
@@ -47,7 +47,7 @@ PM> Install-Package Xam.Plugin.AzurePushNotification</br>
   - configure your Notification Hub for Windows Phone Silverlight:
   https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-windows-phone-get-started/#create-your-notification-hub
   - WMAppManifest.xml file, click the Capabilities tab, and make sure that the ID_CAP_PUSH_NOTIFICATION capability is checked.
-  - Add the following code inside your app.cs constructor:
+  - Add the following code inside your app.cs constructor:</br>
   PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };</br>
   PushNotificationCredentials.AzureNotificationHubName = "AzureNotificationHubName";</br>
   PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";</br>
