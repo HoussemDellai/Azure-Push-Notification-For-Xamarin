@@ -25,10 +25,10 @@ PM> Install-Package Xam.Plugin.AzurePushNotification</br>
   - Set the following properties inside your app manifest : app name, package name, version number and version name.
   - Then, in your MainActivity.cs, inside OnCreate(), add the following code:
   
-  PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };
-  PushNotificationCredentials.GoogleApiSenderId = "GoogleApiSenderId";
-  PushNotificationCredentials.AzureNotificationHubName = "AzureNotificationHubName";
-  PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";
+  PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };</br>
+  PushNotificationCredentials.GoogleApiSenderId = "GoogleApiSenderId";</br>
+  PushNotificationCredentials.AzureNotificationHubName = "AzureNotificationHubName";</br>
+  PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";</br>
   new AzurePushNotificationForXamarinFormsImplementation().RegisterForAzurePushNotification(this);//this will pass an instance of the MainActivity required to register for GCM.
   
   <h4>b - For Windows Store and Windows Phone 8.1 RT</h4>
@@ -38,18 +38,18 @@ PM> Install-Package Xam.Plugin.AzurePushNotification</br>
   https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-your-notification-hub
   - In the package.appxmanifest, make sue that 'Toast capable' is set to 'Yes'.
   - Add the following code inside your app.cs, OnLaunched() method:
-  PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };
-  PushNotificationCredentials.AzureNotificationHubName = "AzureNotificationHubName";
-  PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";
-  new AzurePushNotificationForXamarinFormsImplementation().RegisterForAzurePushNotification(null);
+  PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };</br>
+  PushNotificationCredentials.AzureNotificationHubName = "AzureNotificationHubName";</br>
+  PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";</br>
+  new AzurePushNotificationForXamarinFormsImplementation().RegisterForAzurePushNotification(null);</br>
 
  <h4>c - For Windows Phone 8/8.1 Silverlight</h4>
   - configure your Notification Hub for Windows Phone Silverlight:
   https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-windows-phone-get-started/#create-your-notification-hub
   - WMAppManifest.xml file, click the Capabilities tab, and make sure that the ID_CAP_PUSH_NOTIFICATION capability is checked.
   - Add the following code inside your app.cs constructor:
-  PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };
-  PushNotificationCredentials.AzureNotificationHubName = "AzureNotificationHubName";
-  PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";
-  new AzurePushNotificationForXamarinFormsImplementation().RegisterForAzurePushNotification(null);
+  PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };</br>
+  PushNotificationCredentials.AzureNotificationHubName = "AzureNotificationHubName";</br>
+  PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";</br>
+  new AzurePushNotificationForXamarinFormsImplementation().RegisterForAzurePushNotification(null);</br>
 
