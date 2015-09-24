@@ -25,11 +25,11 @@ PM> Install-Package Xam.Plugin.AzurePushNotification</br>
   - Set the following properties inside your app manifest : app name, package name, version number and version name.
   - Then, in your MainActivity.cs, inside OnCreate(), add the following code:
   
-  <div style="background-color:blue;">PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };</br>
+  <i>PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };</br>
   PushNotificationCredentials.GoogleApiSenderId = "GoogleApiSenderId";</br>
   PushNotificationCredentials.AzureNotificationHubName = "AzureNotificationHubName";</br>
   PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";</br>
-  new AzurePushNotificationForXamarinFormsImplementation().RegisterForAzurePushNotification(this);//this will pass an instance of the MainActivity required to register for GCM.</div>
+  new AzurePushNotificationForXamarinFormsImplementation().RegisterForAzurePushNotification(this);//this will pass an instance of the MainActivity required to register for GCM.</i>
   
 <h4>b - For Windows Store and Windows Phone 8.1 RT</h4>
   - Register your app for the Windows Store:
