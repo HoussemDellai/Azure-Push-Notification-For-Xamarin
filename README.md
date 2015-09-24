@@ -13,11 +13,11 @@ https://www.nuget.org/packages/Xam.Plugin.AzurePushNotification/</br>
 And could be installed inside your project via Nuget Package Manager or via the Package Manager Console:</br>
 PM> Install-Package Xam.Plugin.AzurePushNotification</br>
 
-<h3>How to use</h3>
+<h3>How to use it</h3>
 
 1 - Install the nuget package Xam.Plugin.AzurePushNotification on each of your Xamarin.Android, Windows Store, Windows Phone (Silverlight and RT) projects.
 2 - Register to Azure Push Notification
-  a - For Xamarin.Android
+  <h4>a - For Xamarin.Android</h4>
   - You will need to get an API Key for Google Cloud Messaging. This link have all the details on how to do that:
   https://azure.microsoft.com/en-us/documentation/articles/partner-xamarin-notification-hubs-android-get-started/#register
   - And you will need to configure your Notification Hub for GCM:
