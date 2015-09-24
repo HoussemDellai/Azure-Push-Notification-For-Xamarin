@@ -1,4 +1,4 @@
-# Azure-Push-Notification-For-Xamarin
+# Azure Push Notification For Xamarin
 
 This plugin makes it easy to register to Microsoft Azure Push Notifications from a Xamarin project. This supports using Tags.
 
