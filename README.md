@@ -50,8 +50,8 @@ PM> Install-Package Xam.Plugin.AzurePushNotification</br>
   - WMAppManifest.xml file, click the Capabilities tab, and make sure that the ID_CAP_PUSH_NOTIFICATION capability is checked.
   - Add the following code inside your app.cs constructor:</br>
   </br>
-  <h6>PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };</br>
+  PushNotificationCredentials.Tags = new[] { "Tag1", "Tag2" };</br>
   PushNotificationCredentials.AzureNotificationHubName = "AzureNotificationHubName";</br>
   PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";</br>
-  new AzurePushNotificationForXamarinFormsImplementation().RegisterForAzurePushNotification(null);</h6></br>
+  new AzurePushNotificationForXamarinFormsImplementation().RegisterForAzurePushNotification(null);</br>
 
