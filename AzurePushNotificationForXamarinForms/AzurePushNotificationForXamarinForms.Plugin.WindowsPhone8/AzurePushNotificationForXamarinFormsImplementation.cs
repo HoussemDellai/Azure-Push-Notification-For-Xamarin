@@ -11,7 +11,7 @@ namespace AzurePushNotificationForXamarinForms.Plugin
   /// </summary>
   public class AzurePushNotificationForXamarinFormsImplementation : IAzurePushNotificationForXamarinForms
   {
-      public void RegisterForAzurePushNotification(object obj)
+      public void RegisterForAzurePushNotification()
       {
             var channel = HttpNotificationChannel.Find("MyPushChannel");
             if (channel == null)

@@ -12,25 +12,41 @@ namespace AzurePushNotificationForXamarinForms.Plugin
     /// </summary>
     public class AzurePushNotificationForXamarinFormsImplementation : IAzurePushNotificationForXamarinForms
     {
+
+        /// <summary>
+        /// References the MainActivity object of the Xamarin.Android project.
+        /// </summary>
+        public static Activity MainActivityInstance = null;
+
         /// <summary>
         /// For Android project, obj must be the MainActivity.
         /// </summary>
         /// <param name="obj"></param>
-        public void RegisterForAzurePushNotification(object obj)
+        public void RegisterForAzurePushNotification()
         {
 
-            var mainActivity = (Activity) obj;
+            if (MainActivityInstance == null)
+            {
+
+                Log.Info("MainActivityInstance", "MainActivityInstance = null;");
+
+                throw new Exception("You need to set AzurePushNotificationForXamarinFormsImplementation.MainActivityInstance to your MainActivity inside MainActivity.cs.");
+            }
+
+            //var mainActivity = MainActivityInstance;//(Activity) obj;
 
             try
             {
                 // Check to ensure everything's set up right
-                GcmClient.CheckDevice(mainActivity);
-                GcmClient.CheckManifest(mainActivity);
+                GcmClient.CheckDevice(MainActivityInstance);
+                GcmClient.CheckManifest(MainActivityInstance);
 
                 // Register for push notifications
                 Log.Info("MainActivity", "Registering...");
 
-                GcmClient.Register(mainActivity, MyBroadcastReceiver.SENDER_IDS);//PushNotifications.Constants.SenderID);
+                GcmClient.Register(MainActivityInstance, MyBroadcastReceiver.SENDER_IDS);
+
+                Log.Info("MainActivity", "Completed Registering.");
             }
             catch (Exception exc)
             {

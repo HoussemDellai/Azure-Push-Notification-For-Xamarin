@@ -11,7 +11,7 @@ namespace AzurePushNotificationForXamarinForms.Plugin
   /// </summary>
   public class AzurePushNotificationForXamarinFormsImplementation : IAzurePushNotificationForXamarinForms
   {
-        public async void RegisterForAzurePushNotification(object obj)
+        public async void RegisterForAzurePushNotification()
         {
             var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
 

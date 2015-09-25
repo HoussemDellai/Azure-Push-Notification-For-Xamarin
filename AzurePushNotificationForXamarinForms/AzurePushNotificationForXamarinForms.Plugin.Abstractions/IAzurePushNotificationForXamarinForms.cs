@@ -8,6 +8,10 @@ namespace AzurePushNotificationForXamarinForms.Plugin.Abstractions
     public interface IAzurePushNotificationForXamarinForms
     {
 
-        void RegisterForAzurePushNotification(object obj);
+        /// <summary>
+        /// Registers for Azure Push Notification using 
+        /// the credentials provided in PushNotificationCredentials class.
+        /// </summary>
+        void RegisterForAzurePushNotification();
     }
 }

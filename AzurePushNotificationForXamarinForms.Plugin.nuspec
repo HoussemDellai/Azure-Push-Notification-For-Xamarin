@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8.1">
     <id>Xam.Plugin.AzurePushNotification</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <title>Azure Push Notification</title>
     <authors>Houssem Dellai</authors>
     <owners>Houssem Dellai</owners>
@@ -13,12 +13,15 @@
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      This plugin makes it easy to register to Microsoft Azure Push Notifications from a Xamarin project. This supports using Tags.
+      This plugin makes it easy to register to Microsoft Azure Push Notifications from a Xamarin.Forms project and supports using Tags.
       The supported projects are:
+      - Xamarin.Forms
       - Xamarin.Android
       - Windows Phone 8.1 RT
       - Windows Phone Silverlight
       - Windows Store 8
+
+      More details are available on Github : https://github.com/HoussemDellai/Azure-Push-Notification-For-Xamarin
     </description>
     <summary>Register to Microsoft Azure Push Notifications using Tags.</summary>
     <tags>xamarin, azure, push notification, pcl, xam.pcl, plugin, plugin for xamarin, windows phone, winphone, wp8, winrt, android, xamarin.forms, </tags>
