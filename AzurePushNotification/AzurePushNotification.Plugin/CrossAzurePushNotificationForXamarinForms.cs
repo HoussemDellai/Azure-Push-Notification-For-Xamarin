@@ -1,12 +1,12 @@
-﻿using AzurePushNotificationForXamarinForms.Plugin.Abstractions;
-using System;
+﻿using System;
+using AzurePushNotificationForXamarinForms.Plugin.Abstractions;
 
 namespace AzurePushNotificationForXamarinForms.Plugin
 {
-  /// <summary>
-  /// Cross platform AzurePushNotificationForXamarinForms implemenations
-  /// </summary>
-  public class CrossAzurePushNotificationForXamarinForms
+    /// <summary>
+    /// Cross platform AzurePushNotificationForXamarinForms implemenations
+    /// </summary>
+    public class CrossAzurePushNotificationForXamarinForms
   {
     static Lazy<IAzurePushNotificationForXamarinForms> Implementation = new Lazy<IAzurePushNotificationForXamarinForms>(() => CreateAzurePushNotificationForXamarinForms(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
 

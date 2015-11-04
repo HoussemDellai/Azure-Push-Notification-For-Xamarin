@@ -33,8 +33,6 @@ namespace AzurePushNotificationForXamarinForms.Plugin
                 throw new Exception("You need to set AzurePushNotificationForXamarinFormsImplementation.MainActivityInstance to your MainActivity inside MainActivity.cs.");
             }
 
-            //var mainActivity = MainActivityInstance;//(Activity) obj;
-
             try
             {
                 // Check to ensure everything's set up right
@@ -47,6 +45,35 @@ namespace AzurePushNotificationForXamarinForms.Plugin
                 GcmClient.Register(MainActivityInstance, MyBroadcastReceiver.SENDER_IDS);
 
                 Log.Info("MainActivity", "Completed Registering.");
+            }
+            catch (Exception exc)
+            {
+                Log.Info("Exception : ", exc.Message);
+            }
+        }
+
+        public void UnregisterFromAzurePushNotification()
+        {
+            if (MainActivityInstance == null)
+            {
+
+                Log.Info("MainActivityInstance", "MainActivityInstance = null;");
+
+                throw new Exception("You need to set AzurePushNotificationForXamarinFormsImplementation.MainActivityInstance to your MainActivity inside MainActivity.cs.");
+            }
+
+            try
+            {
+                // Check to ensure everything's set up right
+                GcmClient.CheckDevice(MainActivityInstance);
+                GcmClient.CheckManifest(MainActivityInstance);
+
+                // Register for push notifications
+                Log.Info("MainActivity", "Unregistering...");
+
+                GcmClient.UnRegister(MainActivityInstance);
+
+                Log.Info("MainActivity", "Completed unregistering.");
             }
             catch (Exception exc)
             {

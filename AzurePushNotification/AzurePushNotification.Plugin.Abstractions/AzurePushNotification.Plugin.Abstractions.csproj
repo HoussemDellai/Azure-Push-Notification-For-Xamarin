@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A6FCEF44-D2BA-42C7-B3CB-13667BCD7B54}</ProjectGuid>
+    <ProjectGuid>{6EDB0588-FFC5-4EF5-8A99-9E241D0F878D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AzurePushNotificationForXamarinForms.Plugin</RootNamespace>
-    <AssemblyName>AzurePushNotificationForXamarinForms.Plugin</AssemblyName>
+    <RootNamespace>AzurePushNotificationForXamarinForms.Plugin.Abstractions</RootNamespace>
+    <AssemblyName>AzurePushNotification.Plugin.Abstractions</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -21,7 +21,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;PORTABLE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -29,20 +29,17 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;PORTABLE</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\AzurePushNotificationForXamarinForms.Plugin.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\AzurePushNotification.Plugin.Abstractions.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\AzurePushNotificationForXamarinForms.Plugin.Abstractions\AzurePushNotificationForXamarinForms.Plugin.Abstractions.csproj">
-      <Project>{6edb0588-ffc5-4ef5-8a99-9e241d0f878d}</Project>
-      <Name>AzurePushNotificationForXamarinForms.Plugin.Abstractions</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrossAzurePushNotificationForXamarinForms.cs" />
+    <Compile Include="PushNotificationCredentials.cs" />
+    <Compile Include="IAzurePushNotificationForXamarinForms.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

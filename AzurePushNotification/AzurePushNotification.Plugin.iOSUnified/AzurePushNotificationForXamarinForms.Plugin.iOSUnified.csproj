@@ -42,7 +42,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AzurePushNotificationForXamarinForms.Plugin.Abstractions\AzurePushNotificationForXamarinForms.Plugin.Abstractions.csproj">
+    <ProjectReference Include="..\AzurePushNotification.Plugin.Abstractions\AzurePushNotification.Plugin.Abstractions.csproj">
       <Project>{6edb0588-ffc5-4ef5-8a99-9e241d0f878d}</Project>
       <Name>AzurePushNotificationForXamarinForms.Plugin.Abstractions</Name>
     </ProjectReference>

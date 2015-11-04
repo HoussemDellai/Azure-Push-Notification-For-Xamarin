@@ -59,8 +59,8 @@ namespace AzurePushNotificationForXamarinForms.Plugin
             Log.Verbose(MyBroadcastReceiver.TAG, "GCM Registered: " + registrationId);
             RegistrationID = registrationId;
 
-            createNotification("PushHandlerService-GCM Registered...",
-                                "The device has been Registered!");
+            createNotification("Registered for notifications",
+                                "The device has been Registered for push notification!");
 
             Hub = new NotificationHub(PushNotificationCredentials.AzureNotificationHubName, PushNotificationCredentials.AzureListenConnectionString,
                                         context);

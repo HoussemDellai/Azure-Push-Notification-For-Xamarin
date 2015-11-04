@@ -6,11 +6,11 @@ using Microsoft.WindowsAzure.Messaging;
 
 namespace AzurePushNotificationForXamarinForms.Plugin
 {
-    /// <summary>
-    /// Implementation for AzurePushNotificationForXamarinForms
-    /// </summary>
-    public class AzurePushNotificationForXamarinFormsImplementation : IAzurePushNotificationForXamarinForms
-    {
+  /// <summary>
+  /// Implementation for AzurePushNotificationForXamarinForms
+  /// </summary>
+  public class AzurePushNotificationForXamarinFormsImplementation : IAzurePushNotificationForXamarinForms
+  {
         public async void RegisterForAzurePushNotification()
         {
             var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
@@ -19,6 +19,16 @@ namespace AzurePushNotificationForXamarinForms.Plugin
                 PushNotificationCredentials.AzureListenConnectionString);
 
             await hub.RegisterNativeAsync(channel.Uri, PushNotificationCredentials.Tags);
+        }
+
+        public async void UnregisterFromAzurePushNotification()
+        {
+            var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
+
+            var hub = new NotificationHub(PushNotificationCredentials.AzureNotificationHubName,
+                PushNotificationCredentials.AzureListenConnectionString);
+
+            await hub.UnregisterNativeAsync();
         }
     }
 }
