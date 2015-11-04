@@ -1,6 +1,7 @@
 ﻿using System;
 using AzurePushNotificationForXamarinForms.Plugin.Abstractions;
 
+
 namespace AzurePushNotificationForXamarinForms.Plugin
 {
     /// <summary>
