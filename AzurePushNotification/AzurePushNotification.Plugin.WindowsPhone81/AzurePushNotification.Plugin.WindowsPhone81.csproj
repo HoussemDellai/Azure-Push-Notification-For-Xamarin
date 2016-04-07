@@ -80,10 +80,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\AzurePushNotification.Plugin\CrossAzurePushNotificationForXamarinForms.cs">
-      <Link>CrossAzurePushNotificationForXamarinForms.cs</Link>
+    <Compile Include="..\AzurePushNotification.Plugin\CrossAzurePushNotification.cs">
+      <Link>CrossAzurePushNotification.cs</Link>
     </Compile>
-    <Compile Include="AzurePushNotificationForXamarinFormsImplementation.cs" />
+    <Compile Include="AzurePushNotificationImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

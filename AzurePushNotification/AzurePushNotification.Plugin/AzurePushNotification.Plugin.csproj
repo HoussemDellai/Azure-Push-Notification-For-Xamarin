@@ -35,7 +35,7 @@
     <DocumentationFile>bin\Release\AzurePushNotification.Plugin.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CrossAzurePushNotificationForXamarinForms.cs" />
+    <Compile Include="CrossAzurePushNotification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

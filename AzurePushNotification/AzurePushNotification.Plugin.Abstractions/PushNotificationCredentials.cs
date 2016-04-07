@@ -1,6 +1,6 @@
 
 
-namespace AzurePushNotificationForXamarinForms.Plugin.Abstractions
+namespace AzurePushNotification.Plugin.Abstractions
 {
     /// <summary>
     /// Contains credentials for accessing Microsoft Azure Push Notifications 

@@ -51,10 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AzurePushNotification.Plugin\CrossAzurePushNotificationForXamarinForms.cs">
-      <Link>CrossAzurePushNotificationForXamarinForms.cs</Link>
+    <Compile Include="..\AzurePushNotification.Plugin\CrossAzurePushNotification.cs">
+      <Link>CrossAzurePushNotification.cs</Link>
     </Compile>
-    <Compile Include="AzurePushNotificationForXamarinFormsImplementation.cs" />
+    <Compile Include="AzurePushNotificationImplementation.cs" />
     <Compile Include="MyBroadcastReceiver.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

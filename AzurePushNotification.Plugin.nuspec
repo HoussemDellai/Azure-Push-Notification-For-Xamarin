@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8.1">
     <id>Xam.Plugin.AzurePushNotification</id>
-    <version>2.0.0</version>
+    <version>2.1.9</version>
     <title>Azure Push Notification</title>
     <authors>Houssem Dellai</authors>
     <owners>Houssem Dellai</owners>
@@ -32,30 +32,36 @@
 
   <files>
     <!--Core-->
-    <file src="AzurePushNotification\AzurePushNotification.Plugin\bin\Release\AzurePushNotification.Plugin.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.dll" />
-    <file src="AzurePushNotification\AzurePushNotification.Plugin\bin\Release\AzurePushNotification.Plugin.xml" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.xml" />
-    <file src="AzurePushNotification\AzurePushNotification.Plugin\bin\Release\AzurePushNotification.Plugin.pdb" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.pdb" />
-    <file src="AzurePushNotification\AzurePushNotification.Plugin.Abstractions\bin\Release\AzurePushNotification.Plugin.Abstractions.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.Abstractions.dll" />
-    <file src="AzurePushNotification\AzurePushNotification.Plugin.Abstractions\bin\Release\AzurePushNotification.Plugin.Abstractions.xml" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.Abstractions.xml" />
-    <file src="AzurePushNotification\AzurePushNotification.Plugin.Abstractions\bin\Release\AzurePushNotification.Plugin.Abstractions.pdb" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.Abstractions.pdb" />
+    <file src="AzurePushNotification\AzurePushNotification.Plugin\bin\Release\AzurePushNotification.Plugin.dll" 
+          target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.dll" />
+    <file src="AzurePushNotification\AzurePushNotification.Plugin\bin\Release\AzurePushNotification.Plugin.xml" 
+          target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.xml" />
+    <file src="AzurePushNotification\AzurePushNotification.Plugin\bin\Release\AzurePushNotification.Plugin.pdb" 
+          target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.pdb" />
+    <file src="AzurePushNotification\AzurePushNotification.Plugin.Abstractions\bin\Release\AzurePushNotification.Plugin.Abstractions.dll" 
+          target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.Abstractions.dll" />
+    <file src="AzurePushNotification\AzurePushNotification.Plugin.Abstractions\bin\Release\AzurePushNotification.Plugin.Abstractions.xml" 
+          target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.Abstractions.xml" />
+    <file src="AzurePushNotification\AzurePushNotification.Plugin.Abstractions\bin\Release\AzurePushNotification.Plugin.Abstractions.pdb" 
+          target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\AzurePushNotification.Plugin.Abstractions.pdb" />
 
     <!--Win Phone Silverlight-->
     <file src="AzurePushNotification\AzurePushNotification.Plugin.WindowsPhone8\bin\Release\AzurePushNotification.Plugin.dll" target="lib\wp8\AzurePushNotification.Plugin.dll" />
 
 
     <!--Adding reference to Nuget package WindowsAzure.Messaging.Managed-->
-    <file src="packages\WindowsAzure.Messaging.Managed.0.1.7.9\lib\windowsphone8\Microsoft.WindowsAzure.Messaging.dll" 
+    <file src="packages\WindowsAzure.Messaging.Managed.0.1.7.9\lib\windowsphone8\Microsoft.WindowsAzure.Messaging.dll"
           target="lib\wp8\Microsoft.WindowsAzure.Messaging.dll" />
 
 
     <file src="AzurePushNotification\AzurePushNotification.Plugin.WindowsPhone8\bin\Release\AzurePushNotification.Plugin.xml" target="lib\wp8\AzurePushNotification.Plugin.xml" />
-    
+
     <file src="AzurePushNotification\AzurePushNotification.Plugin.WindowsPhone8\bin\Release\AzurePushNotification.Plugin.pdb" target="lib\wp8\AzurePushNotification.Plugin.pdb" />
-    
+
     <file src="AzurePushNotification\AzurePushNotification.Plugin.Abstractions\bin\Release\AzurePushNotification.Plugin.Abstractions.dll" target="lib\wp8\AzurePushNotification.Plugin.Abstractions.dll" />
-    
+
     <file src="AzurePushNotification\AzurePushNotification.Plugin.Abstractions\bin\Release\AzurePushNotification.Plugin.Abstractions.xml" target="lib\wp8\AzurePushNotification.Plugin.Abstractions.xml" />
-    
+
     <file src="AzurePushNotification\AzurePushNotification.Plugin.Abstractions\bin\Release\AzurePushNotification.Plugin.Abstractions.pdb" target="lib\wp8\AzurePushNotification.Plugin.Abstractions.pdb" />
 
     <!--Win Phone 81-->
@@ -63,10 +69,10 @@
 
 
     <!--Adding reference to Nuget package WindowsAzure.Messaging.Managed-->
-    <file src="packages\WindowsAzure.Messaging.Managed.0.1.7.9\lib\wpa81\Microsoft.WindowsAzure.Messaging.Managed.dll" 
+    <file src="packages\WindowsAzure.Messaging.Managed.0.1.7.9\lib\wpa81\Microsoft.WindowsAzure.Messaging.Managed.dll"
           target="lib\wpa81\Microsoft.WindowsAzure.Messaging.Managed.dll" />
-    
-    
+
+
     <file src="AzurePushNotification\AzurePushNotification.Plugin.WindowsPhone81\bin\Release\AzurePushNotification.Plugin.xml" target="lib\wpa81\AzurePushNotification.Plugin.xml" />
     <file src="AzurePushNotification\AzurePushNotification.Plugin.WindowsPhone81\bin\Release\AzurePushNotification.Plugin.pdb" target="lib\wpa81\AzurePushNotification.Plugin.pdb" />
     <file src="AzurePushNotification\AzurePushNotification.Plugin.Abstractions\bin\Release\AzurePushNotification.Plugin.Abstractions.dll" target="lib\wpa81\AzurePushNotification.Plugin.Abstractions.dll" />
@@ -82,8 +88,8 @@
     <!--Adding reference to Nuget package WindowsAzure.Messaging.Managed-->
     <file src="packages\WindowsAzure.Messaging.Managed.0.1.7.9\lib\netcore45\Microsoft.WindowsAzure.Messaging.Managed.dll"
           target="lib\win8\Microsoft.WindowsAzure.Messaging.Managed.dll" />
-    
-    
+
+
     <file src="AzurePushNotification\AzurePushNotification.Plugin.WindowsStore\bin\Release\AzurePushNotification.Plugin.xml"
           target="lib\win8\AzurePushNotification.Plugin.xml" />
 
@@ -101,6 +107,15 @@
 
 
     <!--Xamarin.Android-->
+    <!--<file src="AzurePushNotification\AzurePushNotification.Plugin.Android\AzurePushNotificationImplementation.cs"
+          target="content\MonoAndroid10\AzurePushNotification\AzurePushNotificationImplementation.cs" />
+
+    <file src="AzurePushNotification\AzurePushNotification.Plugin.Android\MyBroadcastReceiver.cs"
+          target="content\MonoAndroid10\AzurePushNotification\MyBroadcastReceiver.cs" />-->
+
+    <!--<file src="AzurePushNotification\AzurePushNotification.Plugin\CrossAzurePushNotification.cs"
+          target="content\MonoAndroid10\AzurePushNotification\CrossAzurePushNotification.cs" />-->
+
     <file src="AzurePushNotification\AzurePushNotification.Plugin.Android\bin\Release\AzurePushNotification.Plugin.dll"
           target="lib\MonoAndroid10\AzurePushNotification.Plugin.dll" />
 

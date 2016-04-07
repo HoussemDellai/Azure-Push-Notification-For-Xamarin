@@ -26,7 +26,7 @@ PM> Install-Package Xam.Plugin.AzurePushNotification</br>
   - Set the following properties inside your app manifest : app name, package name, version number and version name.
   - Then, in your MainActivity.cs, inside OnCreate(), add the following code:
   
-  AzurePushNotificationForXamarinFormsImplementation.MainActivityInstance = this;
+  AzurePushNotificationImplementation.MainActivityInstance = this;
   
 <h4>b - For Windows Store and Windows Phone 8.1 RT</h4>
   - Register your app for the Windows Store:

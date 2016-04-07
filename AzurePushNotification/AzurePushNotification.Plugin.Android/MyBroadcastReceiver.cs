@@ -8,7 +8,7 @@ using Android.Content;
 using Android.Util;
 using Gcm.Client;
 using WindowsAzure.Messaging;
-using AzurePushNotificationForXamarinForms.Plugin.Abstractions;
+using AzurePushNotification.Plugin.Abstractions;
 
 [assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
 [assembly: UsesPermission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
@@ -19,8 +19,11 @@ using AzurePushNotificationForXamarinForms.Plugin.Abstractions;
 [assembly: UsesPermission(Name = "android.permission.INTERNET")]
 [assembly: UsesPermission(Name = "android.permission.WAKE_LOCK")]
 
-namespace AzurePushNotificationForXamarinForms.Plugin
+namespace AzurePushNotification.Plugin
 {
+    /// <summary>
+    /// https://azure.microsoft.com/en-us/documentation/articles/partner-xamarin-notification-hubs-android-get-started/#overview
+    /// </summary>
     [BroadcastReceiver(Permission = Gcm.Client.Constants.PERMISSION_GCM_INTENTS)]
     [IntentFilter(new string[] { Gcm.Client.Constants.INTENT_FROM_GCM_MESSAGE },
      Categories = new string[] { "@PACKAGE_NAME@" })]
@@ -29,9 +32,11 @@ namespace AzurePushNotificationForXamarinForms.Plugin
     [IntentFilter(new string[] { Gcm.Client.Constants.INTENT_FROM_GCM_LIBRARY_RETRY },
      Categories = new string[] { "@PACKAGE_NAME@" })]
 
-    //https://azure.microsoft.com/en-us/documentation/articles/partner-xamarin-notification-hubs-android-get-started/#overview
     public class MyBroadcastReceiver : GcmBroadcastReceiverBase<PushHandlerService>
     {
+        /// <summary>
+        /// returns PushNotificationCredentials.GoogleApiSenderId.
+        /// </summary>
         public static string[] SENDER_IDS = new string[]
         {
             PushNotificationCredentials.GoogleApiSenderId
@@ -40,14 +45,17 @@ namespace AzurePushNotificationForXamarinForms.Plugin
         public const string TAG = "MyBroadcastReceiver-GCM";
     }
 
+    /// <summary>
+    /// PushHandlerService is the object that contains actual code for registering, 
+    /// unregistering and receiving push notifications.
+    /// </summary>
     [Service] // Must use the service tag
     public class PushHandlerService : GcmServiceBase
     {
-        public static string RegistrationID
-        { get; private set; }
 
-        private NotificationHub Hub
-        { get; set; }
+        public static string RegistrationID { get; private set; }
+
+        private NotificationHub Hub { get; set; }
 
         public PushHandlerService() : base(PushNotificationCredentials.GoogleApiSenderId)
         {
@@ -59,8 +67,11 @@ namespace AzurePushNotificationForXamarinForms.Plugin
             Log.Verbose(MyBroadcastReceiver.TAG, "GCM Registered: " + registrationId);
             RegistrationID = registrationId;
 
-            createNotification("Registered for notifications",
-                                "The device has been Registered for push notification!");
+            if (PushNotificationMessages.IsShowRegistrationMessage)
+            {
+                CreateNotification(PushNotificationMessages.RegistrationMessage,
+            PushNotificationMessages.RegistrationMessageDescription);
+            }
 
             Hub = new NotificationHub(PushNotificationCredentials.AzureNotificationHubName, PushNotificationCredentials.AzureListenConnectionString,
                                         context);
@@ -101,15 +112,15 @@ namespace AzurePushNotificationForXamarinForms.Plugin
             string messageText = intent.Extras.GetString("message");
             if (!string.IsNullOrEmpty(messageText))
             {
-                createNotification("New hub message!", messageText);
+                CreateNotification(PushNotificationMessages.ReceivedMessage, messageText);
             }
             else
             {
-                createNotification("Unknown message details", msg.ToString());
+                //CreateNotification("Unknown message details", msg.ToString());
             }
         }
 
-        void createNotification(string title, string desc)
+        void CreateNotification(string title, string desc)
         {
             //Create notification
             var notificationManager = GetSystemService(Context.NotificationService) as NotificationManager;
@@ -159,9 +170,16 @@ namespace AzurePushNotificationForXamarinForms.Plugin
 
         protected override void OnUnRegistered(Context context, string registrationId)
         {
+
+            if (Hub != null)
+            {
+                Hub.Unregister();
+                Hub.UnregisterAll(registrationId);
+            }
+
             Log.Verbose(MyBroadcastReceiver.TAG, "GCM Unregistered: " + registrationId);
 
-            createNotification("GCM Unregistered...", "The device has been unregistered!");
+            CreateNotification(PushNotificationMessages.UnregistrationMessage, PushNotificationMessages.UnregistrationMessageDescription);
         }
 
         protected override bool OnRecoverableError(Context context, string errorId)
