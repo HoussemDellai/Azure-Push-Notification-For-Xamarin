@@ -47,5 +47,11 @@ PushNotificationCredentials.GoogleApiSenderId = "GoogleApiSenderId";
 PushNotificationCredentials.AzureNotificationHubName = "AzureNotificationHubName";
 PushNotificationCredentials.AzureListenConnectionString = "AzureListenConnectionString";
                 
-CrossAzurePushNotificationForXamarinForms.Current.RegisterForAzurePushNotification();
+PushNotificationMessages.RegistrationMessage = "Successfully registered to Azure Push Notification!";
+PushNotificationMessages.RegistrationMessageDescription = "You are successfully registered to Azure Push Notification!";
+PushNotificationMessages.UnregistrationMessage = "Successfully unregistered from Azure Push Notification!";
+PushNotificationMessages.UnregistrationMessageDescription = "Successfully unregistered from Azure Push Notification!";
+PushNotificationMessages.ReceivedMessage = "A new message coming!";
+            
+CrossAzurePushNotification.Current.RegisterForAzurePushNotification();
 
