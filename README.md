@@ -52,6 +52,7 @@ PushNotificationMessages.RegistrationMessageDescription = "You are successfully 
 PushNotificationMessages.UnregistrationMessage = "Successfully unregistered from Azure Push Notification!";
 PushNotificationMessages.UnregistrationMessageDescription = "Successfully unregistered from Azure Push Notification!";
 PushNotificationMessages.ReceivedMessage = "A new message coming!";
+PushNotificationMessages.IsShowRegistrationMessage = true; // show RegistrationMessage on task bar.
             
 CrossAzurePushNotification.Current.RegisterForAzurePushNotification();
 
