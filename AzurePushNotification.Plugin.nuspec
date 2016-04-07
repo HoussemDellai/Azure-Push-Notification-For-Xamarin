@@ -2,14 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8.1">
     <id>Xam.Plugin.AzurePushNotification</id>
-    <version>2.1.9</version>
+    <version>2.2.0</version>
     <title>Azure Push Notification</title>
     <authors>Houssem Dellai</authors>
     <owners>Houssem Dellai</owners>
     <licenseUrl>https://github.com/HoussemDellai/Azure-Push-Notification-For-Xamarin</licenseUrl>
     <projectUrl>https://github.com/HoussemDellai/Azure-Push-Notification-For-Xamarin</projectUrl>
     <!--Default Icon, a template can be found:  https://raw.githubusercontent.com/jamesmontemagno/Xamarin-Templates/master/Plugins-Templates/icons/plugin_icon.png-->
-    <iconUrl>https://raw.githubusercontent.com/jamesmontemagno/Xamarin-Templates/master/Plugins-Templates/icons/plugin_icon_nuget.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/HoussemDellai/Azure-Push-Notification-For-Xamarin/master/items/azure-push.png</iconUrl>
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
