@@ -27,6 +27,7 @@ PM> Install-Package Xam.Plugin.AzurePushNotification</br>
   - Then, in your MainActivity.cs, inside OnCreate(), add the following code:
   
   AzurePushNotificationImplementation.MainActivityInstance = this;
+  AzurePushNotificationImplementation.NotificationIconDrawable = Android.Resource.Drawable.StatNotifyMore;
   
 <h4>b - For Windows Store and Windows Phone 8.1 RT</h4>
   - Register your app for the Windows Store:
