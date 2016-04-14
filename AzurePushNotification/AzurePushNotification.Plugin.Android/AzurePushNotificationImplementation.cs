@@ -19,6 +19,11 @@ namespace AzurePushNotification.Plugin
         public static Activity MainActivityInstance = null;
 
         /// <summary>
+        /// The icon to be shown with notifications.
+        /// </summary>
+        public static int NotificationIconDrawable = Android.Resource.Drawable.StatNotifyMore;
+
+        /// <summary>
         /// For Android project, obj must be the MainActivity.
         /// </summary>
         /// <param name="obj"></param>

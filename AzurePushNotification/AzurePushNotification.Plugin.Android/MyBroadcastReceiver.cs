@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 using Android.App;
@@ -8,7 +9,10 @@ using Android.Content;
 using Android.Util;
 using Gcm.Client;
 using WindowsAzure.Messaging;
+using Android.Graphics;
+using Android.Support.V4.App;
 using AzurePushNotification.Plugin.Abstractions;
+using TaskStackBuilder = Android.App.TaskStackBuilder;
 
 [assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
 [assembly: UsesPermission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
@@ -64,6 +68,7 @@ namespace AzurePushNotification.Plugin
 
         protected override void OnRegistered(Context context, string registrationId)
         {
+
             Log.Verbose(MyBroadcastReceiver.TAG, "GCM Registered: " + registrationId);
             RegistrationID = registrationId;
 
@@ -84,9 +89,6 @@ namespace AzurePushNotification.Plugin
                 Log.Error(MyBroadcastReceiver.TAG, ex.Message);
             }
 
-            //var tags = new List<string>() { "falcons" }; // create tags if you want
-            var tags = new List<string>() { };
-
             try
             {
                 var hubRegistration = Hub.Register(registrationId, PushNotificationCredentials.Tags);
@@ -99,8 +101,6 @@ namespace AzurePushNotification.Plugin
 
         protected override void OnMessage(Context context, Intent intent)
         {
-            Log.Info(MyBroadcastReceiver.TAG, "GCM Message Received!");
-
             var msg = new StringBuilder();
 
             if (intent != null && intent.Extras != null)
@@ -122,28 +122,37 @@ namespace AzurePushNotification.Plugin
 
         void CreateNotification(string title, string desc)
         {
-            //Create notification
-            var notificationManager = GetSystemService(Context.NotificationService) as NotificationManager;
-
-            //Create an intent to show UI
-            var uiIntent = new Intent(this, typeof(Activity));
-
-            //Create the notification
-            var notification = new Notification(Android.Resource.Drawable.SymActionEmail, title)
+            if (AzurePushNotificationImplementation.MainActivityInstance != null)
             {
-                Flags = NotificationFlags.AutoCancel
-            };
+                var context = AzurePushNotificationImplementation.MainActivityInstance;
 
-            //Auto-cancel will remove the notification once the user touches it
+                var intent = new Intent(context, context.GetType());
+                var notificationManager = (NotificationManager) GetSystemService(NotificationService);
 
-            //Set the notification info
-            //we use the pending intent, passing our ui intent over, which will get called
-            //when the notification is tapped.
-            notification.SetLatestEventInfo(this, title, desc, PendingIntent.GetActivity(this, 0, uiIntent, 0));
+                intent.AddFlags(ActivityFlags.ClearTop);
 
-            //Show the notification
-            notificationManager.Notify(1, notification);
-            //dialogNotify(title, desc);
+                var pendingIntent = PendingIntent.GetActivity(context, 0, intent, PendingIntentFlags.UpdateCurrent);
+
+                var builder = new NotificationCompat.Builder(context)
+                    .SetSmallIcon(Android.Resource.Drawable.StatNotifyMore)
+                    .SetSmallIcon(Android.Resource.Drawable.ButtonPlus)
+                    .SetContentTitle(title)
+                    .SetStyle(new NotificationCompat.BigTextStyle().BigText(desc))
+                    .SetContentText(desc)
+                    .SetContentIntent(pendingIntent);
+
+                if (AzurePushNotificationImplementation.NotificationIconDrawable != null)
+                {
+                    builder.SetSmallIcon(AzurePushNotificationImplementation.NotificationIconDrawable);
+                }
+
+                var notification = builder.Build();
+
+                //Auto cancel will remove the notification once the user touches it
+                notification.Flags = NotificationFlags.AutoCancel;
+
+                notificationManager.Notify(1, notification);
+            }
         }
 
         /// <summary>
